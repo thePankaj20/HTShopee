@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" id="KGk-i7-Jjw" customClass="CategoryTableViewCell" customModule="HTShopee" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5f-VG-ETW">
+                        <rect key="frame" x="12" y="8" width="296" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxi-3a-6Dx">
+                                <rect key="frame" x="12" y="28" width="272" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="0.50369220889999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uxi-3a-6Dx" firstAttribute="centerY" secondItem="z5f-VG-ETW" secondAttribute="centerY" id="Hlb-bC-t1Z"/>
+                            <constraint firstAttribute="trailing" secondItem="uxi-3a-6Dx" secondAttribute="trailing" constant="12" id="e35-1t-NOz"/>
+                            <constraint firstItem="uxi-3a-6Dx" firstAttribute="leading" secondItem="z5f-VG-ETW" secondAttribute="leading" constant="12" id="jL6-DM-AVG"/>
+                            <constraint firstAttribute="height" constant="80" id="o8A-WM-v6N"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="z5f-VG-ETW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="CJj-lb-0bF"/>
+                    <constraint firstItem="z5f-VG-ETW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="PXl-8l-219"/>
+                    <constraint firstAttribute="trailing" secondItem="z5f-VG-ETW" secondAttribute="trailing" constant="12" id="vPN-Pu-dFo"/>
+                    <constraint firstAttribute="bottom" secondItem="z5f-VG-ETW" secondAttribute="bottom" constant="8" id="ycv-yf-xLr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblCategoryName" destination="uxi-3a-6Dx" id="rRU-t6-fiI"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="147.32142857142856"/>
+        </tableViewCell>
+    </objects>
+</document>
