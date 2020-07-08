@@ -17,7 +17,7 @@ class ProductListVC: HTTableViewController {
         super.viewDidLoad()
         tableView.register(cell: ProductTableViewCell.self)
     }
-   
+   //MARK:- Table view methods
     override func createTableViewModel() -> HTTableViewModel {
         let htTableViewModel = HTTableViewModel()
         for prodcut in arrProducts ?? []{
@@ -30,6 +30,7 @@ class ProductListVC: HTTableViewController {
         selectedProduct = arrProducts![indexPath.row]
         performSegue(withIdentifier: "toDetails", sender: self)
     }
+    //MARK:- Segue navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ProductDetailsVC
         vc.selectedProduct = selectedProduct

@@ -12,7 +12,7 @@ import UIKit
 class HomePageViewModel {
     
     var prodcutResp: ProductBaseModel?
-    
+    //MARK:- API call
     func getProductInfo(completionHandler : @escaping(ProductBaseModel?,Error?)->Void ) {
         
         fetchDataFromLocalDB { (respData, eroor) in
@@ -55,9 +55,8 @@ class HomePageViewModel {
                 }
             }
         }
-        
-        
     }
+    //MARK:- Local DB operations
     func saveDataToLocalDB(productData: String) {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -109,6 +108,7 @@ class HomePageViewModel {
             }
         }
     }
+    //MARK:- Data filteration logic
     func getRankingwiseProduct(ranking: Rankings) -> [Products] {
         var arrProducts = [Products]()
         for category in self.prodcutResp?.categories ?? []{
@@ -122,6 +122,7 @@ class HomePageViewModel {
         }
         return arrProducts
     }
+    //MARK:- Nabigation flow
     func navigateAsPerSubcategories(viewController: UIViewController, selectedCat: Categories){
         if selectedCat.child_categories?.count ?? 0 > 0 {
             let filteredCat = self.prodcutResp?.categories?.filter{ (cat) -> Bool in

@@ -15,12 +15,11 @@ class ProductDetailsVC: UIViewController {
     var selectedProduct: Products?
     override func viewDidLoad() {
         super.viewDidLoad()
-
         lblProductTitle.text = selectedProduct?.name
-        // Do any additional setup after loading the view.
     }
     
 }
+//MARK:- Collection view delegate and datasource methods
 extension ProductDetailsVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return selectedProduct?.variant?.count ?? 0
@@ -31,8 +30,6 @@ extension ProductDetailsVC: UICollectionViewDataSource {
         cell.configureCell(variant: (selectedProduct?.variant?[indexPath.item])!)
         return cell
     }
-    
-    
 }
 extension ProductDetailsVC: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
