@@ -93,14 +93,18 @@ class HomePageViewModel {
         
         do {
             let products = try managedContext.fetch(fetchRequest)
-            guard let productsData = products[0].value(forKeyPath: "data") as? String else {
-                return
-            }
-            let jsonDecoder = JSONDecoder.init()
-            let data = productsData.data(using: .utf8)
-            let productModel = try jsonDecoder.decode(ProductBaseModel.self, from: data!)
-            DispatchQueue.main.async {
-                completionHandler(productModel,nil)
+            if products.count > 0 {
+                guard let productsData = products[0].value(forKeyPath: "data") as? String else {
+                    return
+                }
+                let jsonDecoder = JSONDecoder.init()
+                let data = productsData.data(using: .utf8)
+                let productModel = try jsonDecoder.decode(ProductBaseModel.self, from: data!)
+                DispatchQueue.main.async {
+                    completionHandler(productModel,nil)
+                }
+            } else {
+                completionHandler(nil, nil)
             }
         } catch let error as NSError {
             DispatchQueue.main.async {
@@ -156,7 +160,7 @@ class HomePageViewModel {
         }
     }
     func moveToProductList(viewController: UIViewController,productArray: [Products], titleString: String){
-        let vc = viewController.storyboard?.instantiateViewController(identifier: "ProductListVC") as! ProductListVC
+        let vc = viewController.storyboard?.instantiateViewController(withIdentifier: "ProductListVC") as! ProductListVC
         vc.rankingArray = self.prodcutResp?.rankings
         vc.arrProducts = productArray
         vc.title = titleString

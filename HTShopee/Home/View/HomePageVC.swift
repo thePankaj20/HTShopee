@@ -12,13 +12,18 @@ class HomePageVC: HTTableViewController {
 
     var viewModel: HomePageViewModel?
     private var refreshControl:UIRefreshControl!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var categoriesArray: [Categories]?
     override func viewDidLoad() {
         super.viewDidLoad()// 
         viewModel = HomePageViewModel()
+        fetchData()
+        uiSetUp()
+    }
+    private func uiSetUp() {
+        self.title = "HTShopee"
         tableView.register(cell: CategoryTableViewCell.self)
         tableView.register(cell: RankingListTableViewCell.self)
-        fetchData()
         initRefreshControl()
     }
     private func initRefreshControl(){
@@ -51,6 +56,7 @@ class HomePageVC: HTTableViewController {
             if error == nil {
                 self.categoriesArray = self.viewModel?.prodcutResp?.categories
                 self.reloadTableView()
+                self.activityIndicator.stopAnimating()
                 self.refreshControl.endRefreshing()
             }
         })

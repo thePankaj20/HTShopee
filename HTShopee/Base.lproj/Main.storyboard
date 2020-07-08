@@ -34,14 +34,19 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="RM2-di-wnn"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OzQ-cH-3dP">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="eM8-bp-waA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7ko-oX-rX0"/>
+                            <constraint firstItem="OzQ-cH-3dP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bbe-8A-vDj"/>
                             <constraint firstAttribute="bottom" secondItem="eM8-bp-waA" secondAttribute="bottom" id="EuS-Wy-smY"/>
                             <constraint firstItem="hlk-5P-Iaf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GjD-0r-3Yu"/>
                             <constraint firstItem="hlk-5P-Iaf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gko-VA-OCR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eM8-bp-waA" secondAttribute="trailing" id="QNP-Zg-1zL"/>
+                            <constraint firstItem="OzQ-cH-3dP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R86-eL-2hA"/>
                             <constraint firstItem="hlk-5P-Iaf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WTv-iS-lux"/>
                             <constraint firstItem="eM8-bp-waA" firstAttribute="top" secondItem="hlk-5P-Iaf" secondAttribute="bottom" id="rwy-OU-Ven"/>
                         </constraints>
@@ -50,6 +55,7 @@
                     <navigationItem key="navigationItem" id="03t-Zu-cF6"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="OzQ-cH-3dP" id="H1r-S2-Fwx"/>
                         <outlet property="tableView" destination="eM8-bp-waA" id="DMg-6o-192"/>
                     </connections>
                 </viewController>
